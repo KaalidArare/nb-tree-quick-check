@@ -37,13 +37,10 @@ public class NbQuickCheck {
       return Integer.MAX_VALUE;
     }
 
-    int min = 0;
+    int min = root.value;
     
     for(var child : root.children) {
-      if(child.value < min) {
-        min = child.value;
-      }
-      minVal(child);
+      min = Math.min(minVal(child), min);
     }
     return min;
   }
